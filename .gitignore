@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+
+results/
+*.csv
+*_report.txt
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea
