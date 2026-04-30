@@ -1,0 +1,11 @@
+openai==1.6.1
+pandas
+torch
+chromadb==0.4.21
+transformers
+numpy==1.26.4
+pandas
+torch
+chromadb==0.4.21
+transformers
+datasets==2.16.0
