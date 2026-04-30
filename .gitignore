@@ -4,9 +4,6 @@ __pycache__/
 .venv/
 venv/
 
-results/
-*.csv
-*_report.txt
 
 # OS/editor files
 .DS_Store
