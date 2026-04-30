@@ -23,7 +23,7 @@ conda activate llm-as-a-judge
 pip install -r requirements.txt
 ```
 
-## Command-line Usage
+## Usage/Examples
 
 Before running any script, activate the environment and set the OpenAI API key:
 
