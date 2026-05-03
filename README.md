@@ -1,6 +1,6 @@
 ## Project Overview
 
-The project uses LLM-as-a-judge methods to analyze model rationales for clinical trial eligibility decisions. .
+The project uses LLM-as-a-judge approach to analyze model rationales for clinical trial eligibility decisions. This script evaluates incorrect model predictions from "Zero Matching Clinical Trial using LLM" n2c2 dataset and TrialGPT dataset. It uses the top K retrieved clinical note chunks as evidence and asks an OpenAI model to classify the reasoning errors in the model's rationales into one of pre-specified error categories. This allows the project to identify common gaps in model explanations and better understand why eligibility predictions fail.
 
 ## Repository Structure
 
@@ -37,53 +37,53 @@ export OPENAI_API_KEY="your_api_key_here"
 Run the script with the chosen top K for retrieved evidence chunk:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --k 3
+python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --k 3 --model gpt-4o-mini
 ```
 
 Run only a test for a number of csv rows:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --head 10
+python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --head 10 --model gpt-4o-mini
 ```
 
 Run using the same input data file and same K
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5
+python n2c2_LLM_as_a_judge_prompt_1.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --model gpt-4o-mini
 ```
 Save output to a specific file:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py --k 3 path/to/input.csv --out results/n2c2_results.csv
+python n2c2_LLM_as_a_judge_prompt_1.py --k 3 path/to/input.csv --out results/n2c2_results.csv --model gpt-4o-mini
 ```
 ### n2c2 Prompt 2
 
 This script should run top-5 retrieved evidence chunk:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5
+python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --model gpt-4o-mini
 ```
 
 Run only a small test sample:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --head 10
+python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --head 10 --model gpt-4o-mini
 ```
 
 Save output to a specific file:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --out results/n2c2_prompt2_judge_results.csv
+python n2c2_LLM_as_a_judge_prompt_2.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5 --out results/ --model gpt-4o-minin2c2_prompt2_judge_results.csv
 ```
 ## TrialGPT
 
 Run the TrialGPT script:
 
 ```bash
-python trialgpt_LLM_as_a_judge.py
+python trialgpt_LLM_as_a_judge.py --model gpt-4o-mini
 ```
 
 Run only a test:
 
 ```bash
-python trialgpt_LLM_as_a_judge.py --head 10
+python trialgpt_LLM_as_a_judge.py --head 10 --model gpt-4o-mini
 ```
