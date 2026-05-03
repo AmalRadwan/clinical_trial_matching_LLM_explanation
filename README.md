@@ -34,26 +34,26 @@ export OPENAI_API_KEY="your_api_key_here"
 
 ### n2c2 prompt 1 
 
-This script should run top-5 retrieved evidence chunk:
+Run the script with the chosen top K for retrieved evidence chunk:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --k 5
+python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --k 3
 ```
 
-Run only a test:
+Run only a test for a number of csv rows:
 
 ```bash
 python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --head 10
 ```
 
-Run using the same input data file
+Run using the same input data file and same K
 ```bash
 python n2c2_LLM_as_a_judge_prompt_1.py "n2c2_results/gpt-4o-mini|sentence-transformers_all-MiniLM-L6-v2|5|each_criteria_all_notes|test|chunk|criteria-all.csv" --k 5
 ```
 Save output to a specific file:
 
 ```bash
-python n2c2_LLM_as_a_judge_prompt_1.py path/to/input.csv --out results/n2c2_results.csv
+python n2c2_LLM_as_a_judge_prompt_1.py --k 3 path/to/input.csv --out results/n2c2_results.csv
 ```
 ### n2c2 Prompt 2
 
