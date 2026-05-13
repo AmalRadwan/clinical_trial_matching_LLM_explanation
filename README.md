@@ -5,6 +5,7 @@ The project uses LLM-as-a-judge approach to analyze model rationales for clinica
 ## Code Attribution
 
 Parts of this project were adapted from the zero-shot clinical trial patient matching codebase by Wornow et al.:
+
 Wornow et al., Clinical Trial Patient Matching with LLMs  
 GitHub repository: https://github.com/som-shahlab/clinical_trial_patient_matching
 
