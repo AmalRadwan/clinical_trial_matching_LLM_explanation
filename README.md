@@ -2,6 +2,14 @@
 
 The project uses LLM-as-a-judge approach to analyze model rationales for clinical trial eligibility decisions. This script evaluates incorrect model predictions from "Zero Matching Clinical Trial using LLM" n2c2 dataset and TrialGPT dataset. It uses the top K retrieved clinical note chunks as evidence and asks an OpenAI model to classify the reasoning errors in the model's rationales into one of pre-specified error categories. This allows the project to identify common gaps in model explanations and better understand why eligibility predictions fail.
 
+## Code Attribution
+
+Parts of this project were adapted from the zero-shot clinical trial patient matching codebase by Wornow et al.:
+Wornow et al., Clinical Trial Patient Matching with LLMs  
+GitHub repository: https://github.com/som-shahlab/clinical_trial_patient_matching
+
+The results and csv files obtained from this study was used in our study. Additionally, this project adapted the code structure related to the retrieval pipeline, patient-note chunking and embedding-based evidence retrieval. The adapted code was modified for this study to support LLM-as-a-judge evaluation of model-generated rationales and reasoning-error classification.
+
 ## Repository Structure
 
 ```text
